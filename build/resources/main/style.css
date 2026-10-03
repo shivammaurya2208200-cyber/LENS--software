@@ -1,0 +1,214 @@
+/* ---------------------------------------------------
+   SHARP & VISIBLE DARK THEME (HIGH CONTRAST)
+--------------------------------------------------- */
+
+.app-root {
+    -fx-background-color: #0f0f11; /* Extremely dark grey, better contrast than pure black */
+    -fx-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* --- Header & Logo --- */
+.header-box {
+    -fx-background-color: #0f0f11;
+}
+
+.logo-text {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.2), 10, 0.2, 0, 0);
+}
+
+/* --- Sleek Search Bar --- */
+.search-wrapper {
+    -fx-max-width: 600px;
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+    -fx-border-color: #444444;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 2;
+}
+
+.search-input {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #999999;
+    -fx-font-size: 15px;
+    -fx-letter-spacing: 2px;
+    -fx-padding: 12 20;
+    -fx-alignment: center;
+}
+
+.search-input:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+
+.search-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-letter-spacing: 2px;
+    -fx-padding: 12 25;
+    -fx-cursor: hand;
+    -fx-border-color: transparent transparent transparent #444444;
+}
+
+.search-btn:hover {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Filters --- */
+.filters-box {
+    -fx-padding: 10 0;
+}
+
+.filter-btn, .filter-combo {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-border-color: #555555;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 15;
+    -fx-cursor: hand;
+}
+
+.filter-btn {
+    -fx-text-fill: #dddddd;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.filter-btn:hover, .filter-combo:hover {
+    -fx-border-color: #888888;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+}
+
+/* Styling the ComboBox itself */
+.filter-combo .list-cell {
+    -fx-text-fill: #dddddd;
+    -fx-background-color: transparent;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.filter-combo .arrow, .filter-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* Styling the Popup Dropdown of the ComboBox */
+.combo-box-popup .list-view {
+    -fx-background-color: #1a1a1c;
+    -fx-border-color: #444444;
+}
+.combo-box-popup .list-cell {
+    -fx-text-fill: #dddddd;
+    -fx-background-color: #1a1a1c;
+    -fx-padding: 12;
+    -fx-font-size: 13px;
+}
+.combo-box-popup .list-cell:hover, .combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+}
+
+/* --- Labels --- */
+.dir-label {
+    -fx-text-fill: #a0a0a0;
+    -fx-font-size: 12px;
+    -fx-letter-spacing: 1px;
+}
+
+/* --- Loading --- */
+.loading-text {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 4px;
+}
+
+/* --- ScrollPane & Timeline Background --- */
+.content-scroll-wrapper {
+    -fx-background-color: #0f0f11;
+}
+
+.content-scroll {
+    -fx-background: #0f0f11;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.content-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.timeline-dot {
+    -fx-effect: dropshadow(three-pass-box, white, 8, 0.6, 0, 0);
+}
+
+/* --- Result Cards (Timeline Nodes) --- */
+.results-container {
+    -fx-background-color: transparent;
+}
+
+.result-card {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-padding: 20;
+    -fx-border-color: #333333;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+}
+
+.result-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.result-card:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: #666666;
+}
+
+.result-meta {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 12px;
+    -fx-letter-spacing: 1px;
+}
+
+/* --- Card Action Buttons --- */
+.action-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: #dddddd;
+    -fx-border-color: #555555;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 15;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+    -fx-cursor: hand;
+}
+
+.action-btn:hover {
+    -fx-text-fill: black;
+    -fx-background-color: white;
+    -fx-border-color: white;
+}
+
+/* ScrollBar Customization for Horizontal */
+.scroll-bar:horizontal {
+    -fx-background-color: #0f0f11;
+    -fx-pref-height: 12px;
+}
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #444444;
+    -fx-background-radius: 8px;
+}
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #666666;
+}

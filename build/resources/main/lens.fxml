@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.lens.LensController" styleClass="app-root">
+    
+    <!-- HEADER SECTION -->
+    <top>
+        <VBox alignment="CENTER" spacing="40" styleClass="header-box">
+            <padding>
+                <Insets top="60" bottom="20" left="40" right="40"/>
+            </padding>
+            
+            <!-- Minimalist Pitch Black Logo with Magnifying Glass -->
+            <HBox alignment="CENTER" spacing="15">
+                <SVGPath content="M 12 4 A 8 8 0 1 1 11.9 4 M 17.6 17.6 L 26 26" stroke="white" strokeWidth="3" fill="transparent"/>
+                <Label text="L E N S" styleClass="logo-text"/>
+            </HBox>
+            
+            <!-- Thin Centered Search Bar -->
+            <HBox alignment="CENTER" spacing="0" styleClass="search-wrapper">
+                <TextField fx:id="searchField" promptText="S E A R C H" HBox.hgrow="ALWAYS" styleClass="search-input" onAction="#onSearch"/>
+                <Button fx:id="searchBtn" text="BEGIN" styleClass="search-btn" onAction="#onSearch"/>
+            </HBox>
+
+            <!-- Floating Thin Filters -->
+            <HBox alignment="CENTER" spacing="30" styleClass="filters-box">
+                <Button text="SELECT DIRECTORY" styleClass="filter-btn" onAction="#onSelectDirectory"/>
+                <ComboBox fx:id="timeCombo" styleClass="filter-combo" onAction="#onTimeChange"/>
+                <ComboBox fx:id="typeCombo" styleClass="filter-combo" onAction="#onTypeChange"/>
+                <ComboBox fx:id="pagesCombo" styleClass="filter-combo" onAction="#onPageChange"/>
+            </HBox>
+            
+            <Label fx:id="directoryLabel" text="[ NO AREA ]" styleClass="dir-label"/>
+        </VBox>
+    </top>
+    
+    <!-- RESULTS SECTION (HORIZONTAL TIMELINE) -->
+    <center>
+        <StackPane styleClass="content-scroll-wrapper">
+            
+            <!-- Dynamic Animation Overlay -->
+            <VBox fx:id="loadingPane" alignment="CENTER" spacing="20" visible="false">
+                <SVGPath fx:id="animationPath" stroke="white" strokeWidth="2" fill="transparent"/>
+                <Label fx:id="loadingPercent" text="S E A R C H I N G . . ." styleClass="loading-text"/>
+            </VBox>
+            
+            <ScrollPane fitToHeight="true" vbarPolicy="NEVER" hbarPolicy="AS_NEEDED" styleClass="content-scroll">
+                <HBox alignment="CENTER_LEFT">
+                    <!-- The actual horizontal timeline bar and results -->
+                    <HBox fx:id="resultsBox" alignment="CENTER_LEFT" styleClass="results-container">
+                        <padding>
+                            <Insets top="0" left="100" right="100" bottom="0"/>
+                        </padding>
+                        <!-- Node boxes will be injected here dynamically -->
+                    </HBox>
+                </HBox>
+            </ScrollPane>
+        </StackPane>
+    </center>
+</BorderPane>
